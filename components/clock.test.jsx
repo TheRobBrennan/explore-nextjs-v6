@@ -12,7 +12,6 @@ describe("The Clock component", () => {
         const mockLastUpdateProp = new Date()
         it("should render", () => {
           const wrapper = mount(<Clock lastUpdate={mockLastUpdateProp} />)
-          console.log(wrapper.debug())
           expect(wrapper).toBeDefined()
         })              
       })
