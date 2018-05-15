@@ -49,7 +49,11 @@
     "next": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "webpack-bundle-analyzer": "^2.12.0"
+    "webpack-bundle-analyzer": "^2.12.0",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
