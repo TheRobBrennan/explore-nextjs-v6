@@ -1,14 +1,13 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import {startClock, addCount, serverRenderClock} from '../store/store'
+import {startClock, incrementCount, serverRenderClock} from '../store/store'
 import Examples from '../components/examples'
 
 class Counter extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
     const isServer = !!req
     reduxStore.dispatch(serverRenderClock(isServer))
-    reduxStore.dispatch(addCount())
-
+    reduxStore.dispatch(incrementCount(isServer))
     return {}
   }
 
