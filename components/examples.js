@@ -5,9 +5,22 @@ import Counter from './counter'
 
 function Examples ({ lastUpdate, light }) {
   return (
-    <div>
+    <div className='main'>
+      <h1>Redux [DEMO]</h1>
       <Clock lastUpdate={lastUpdate} light={light} />
-      <Counter />
+      <Counter className='main' />
+      <style>{`
+        h1 {
+          font-family: Arial;
+        }
+        .main {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 70vh;
+        }
+      `}</style>      
     </div>
   )
 }
