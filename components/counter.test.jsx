@@ -37,4 +37,16 @@ describe(`Counter`, () => {
       expect(mockIncrement.mock.calls.length).toBe(1)
     })
   })
+  describe(`and when the decrement button is pressed`, () => {
+    let wrapper
+    const mockDecrement = jest.fn()
+    beforeEach(() => {
+      wrapper = shallow(<Counter decrement={mockDecrement} />)
+      // Click the button
+      wrapper.find('button#decrement').simulate('click')
+    })
+    it(`the decrement function should be invoked`, () => {
+      expect(mockDecrement.mock.calls.length).toBe(1)
+    })
+  })
 })
