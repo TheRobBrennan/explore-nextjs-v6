@@ -5,7 +5,7 @@ import * as actions from "../redux/enthusiasm/actions/index"
 import { bindActionCreators } from "redux"
 import Enthusiasm from '../redux/enthusiasm/components/enthusiasm'
 
-class ReduxExample extends React.Component {
+export class ReduxExample extends React.Component {
   static getInitialProps({ reduxStore, req }) {
     const isServer = !!req // Did you know? !! converts a value to a boolean and ensures a boolean type
     if (isServer) {
