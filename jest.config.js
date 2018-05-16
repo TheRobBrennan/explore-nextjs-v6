@@ -12,6 +12,8 @@ module.exports = {
     '!next.config.js',
     '**/*.{js,jsx}',
     '!coverage/**',
-    '!server/**'
+    '!server/**',
+    '!lib/with-redux-store.js',
+    '!pages/_app.js',
   ]
 }
