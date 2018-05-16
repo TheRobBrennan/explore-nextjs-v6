@@ -11,7 +11,7 @@ app.prepare().then(() => {
   const server = express()
 
   // Middleware
-  server.use(morgan('short'))
+  server.use(morgan('common'))
 
   server.get("/people", (req, res) => {
     const actualPage = "/ping"
