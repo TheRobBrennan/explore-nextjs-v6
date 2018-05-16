@@ -1,11 +1,11 @@
 version: '3'
 
 services:
-  'nextjs-ui':
+  'demo-nextjs-v6-ui':
     build:
       context: ./
       dockerfile: ./server/Dockerfile
-    container_name: 'nextjs-ui'
+    container_name: 'demo-nextjs-v6-ui'
     ports:
       - "3000:3000"
     volumes:
