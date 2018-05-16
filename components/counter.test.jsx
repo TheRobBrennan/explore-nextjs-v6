@@ -25,16 +25,16 @@ describe(`Counter`, () => {
   it(`should be defined`, () => {
     expect(Counter).toBeDefined()
   })
-  describe(`and when the add button is pressed`, () => {
+  describe(`and when the increment button is pressed`, () => {
     let wrapper
-    const mockAdd = jest.fn()
+    const mockIncrement = jest.fn()
     beforeEach(() => {
-      wrapper = shallow(<Counter add={mockAdd} />)
-      // Click the add button
-      wrapper.find('button#add').simulate('click')
+      wrapper = shallow(<Counter increment={mockIncrement} />)
+      // Click the button
+      wrapper.find('button#increment').simulate('click')
     })
-    it(`the add function should be invoked`, () => {
-      expect(mockAdd.mock.calls.length).toBe(1)
+    it(`the increment function should be invoked`, () => {
+      expect(mockIncrement.mock.calls.length).toBe(1)
     })
   })
 })
