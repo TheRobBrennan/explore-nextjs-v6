@@ -1,32 +1,71 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {startClock, incrementCount, serverRenderClock} from '../store/store'
-import Examples from '../components/examples'
-import App from '../layout/App'
+import React from "react"
+import App from "../layout/App"
+import { connect } from "react-redux"
+import * as actions from "../redux/enthusiasm/actions/index"
+import { bindActionCreators } from "redux"
 
-class Counter extends React.Component {
-  static getInitialProps ({ reduxStore, req }) {
-    const isServer = !!req  // Did you know? !! converts a value to a boolean and ensures a boolean type
-    reduxStore.dispatch(serverRenderClock(isServer))
+class ReduxExample extends React.Component {
+  static getInitialProps({ reduxStore, req }) {
+    const isServer = !!req // Did you know? !! converts a value to a boolean and ensures a boolean type
+    if (isServer) {
+      // Dispatch Redux actions to initialize our store for the desired content
+      // For examples of async actions, check out
+      //  https://github.com/kirill-konshin/next-redux-wrapper#async-actions-in-getinitialprops
+    }
     return {}
   }
 
-  componentDidMount () {
-    const {dispatch} = this.props
-    this.timer = startClock(dispatch)
-  }
-
-  componentWillUnmount () {
-    clearInterval(this.timer)
-  }
-
-  render () {
+  render() {
+    const { enthusiasm, onIncrement, onDecrement } = this.props
     return (
       <App>
-        <Examples />
-      </App>      
+        <div className="myDiv">
+          <h1>Redux [DEMO]</h1>
+          <div className="greeting">
+            Hello. Are you excited?{this.getExclamationMarks(enthusiasm.enthusiasmLevel)}
+          </div>
+          <div>
+            <button onClick={onDecrement}>-</button>
+            <button onClick={onIncrement}>+</button>
+          </div>
+          <pre>{JSON.stringify(this.props)}</pre>
+        </div>
+        <style>{`
+        img {
+          width: 300px;
+          height: 300px;
+          }
+        h1 {
+          font-family: Arial;
+        }
+        .myDiv {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+        }
+      `}</style>
+      </App>
     )
+  }
+
+  getExclamationMarks(numChars) {
+    return Array(numChars + 1).join("!")
   }
 }
 
-export default connect()(Counter)
+const mapStateToProps = ({ enthusiasm }) => {
+  return {
+    enthusiasm,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onIncrement: bindActionCreators(actions.incrementEnthusiasm, dispatch),
+    onDecrement: bindActionCreators(actions.decrementEnthusiasm, dispatch),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxExample)
