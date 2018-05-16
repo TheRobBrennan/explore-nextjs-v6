@@ -5,9 +5,8 @@ import Examples from '../components/examples'
 
 class Counter extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
-    const isServer = !!req
+    const isServer = !!req  // Did you know? !! converts a value to a boolean and ensures a boolean type
     reduxStore.dispatch(serverRenderClock(isServer))
-    reduxStore.dispatch(incrementCount(isServer))
     return {}
   }
 
