@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { connect } from "react-redux"
-import { addCount } from "../store/store"
+import { incrementCount, decrementCount, resetCount } from "../store/store"
 
 export class Counter extends Component {
   render() {
@@ -10,7 +10,15 @@ export class Counter extends Component {
         <h1>
           AddCount: <span>{count}</span>
         </h1>
-        <button id='add' onClick={this.props.add}>Add To Count</button>
+        <button id="increment" onClick={this.props.increment}>
+          +
+        </button>
+        <button id="reset" onClick={this.props.reset}>
+          Reset
+        </button>
+        <button id="decrement" onClick={this.props.decrement}>
+          -
+        </button>
       </div>
     )
   }
@@ -19,8 +27,14 @@ export class Counter extends Component {
 /* istanbul ignore next */
 function mapDispatchToProps(dispatch) {
   return {
-    add: () => {
-      dispatch(addCount())
+    increment: () => {
+      dispatch(incrementCount())
+    },
+    decrement: () => {
+      dispatch(decrementCount())
+    },
+    reset: () => {
+      dispatch(resetCount())
     },
   }
 }
