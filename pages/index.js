@@ -6,6 +6,7 @@ import { bindActionCreators } from "redux"
 import Enthusiasm from '../redux/enthusiasm/components/enthusiasm'
 
 export class ReduxExample extends React.Component {
+  /* istanbul ignore next */
   static getInitialProps({ reduxStore, req }) {
     const isServer = !!req // Did you know? !! converts a value to a boolean and ensures a boolean type
     if (isServer) {
@@ -25,12 +26,14 @@ export class ReduxExample extends React.Component {
   }
 }
 
+/* istanbul ignore next */
 const mapStateToProps = ({ enthusiasm }) => {
   return {
     enthusiasm,
   }
 }
 
+/* istanbul ignore next */
 const mapDispatchToProps = dispatch => {
   return {
     onIncrement: bindActionCreators(actions.incrementEnthusiasm, dispatch),
