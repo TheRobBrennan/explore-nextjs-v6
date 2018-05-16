@@ -3,6 +3,7 @@ import App from "../layout/App"
 import { connect } from "react-redux"
 import * as actions from "../redux/enthusiasm/actions/index"
 import { bindActionCreators } from "redux"
+import Enthusiasm from '../redux/enthusiasm/components/enthusiasm'
 
 class ReduxExample extends React.Component {
   static getInitialProps({ reduxStore, req }) {
@@ -16,42 +17,11 @@ class ReduxExample extends React.Component {
   }
 
   render() {
-    const { enthusiasm, onIncrement, onDecrement } = this.props
     return (
       <App>
-        <div className="myDiv">
-          <h1>Redux [DEMO]</h1>
-          <div className="greeting">
-            Hello. Are you excited?{this.getExclamationMarks(enthusiasm.enthusiasmLevel)}
-          </div>
-          <div>
-            <button onClick={onDecrement}>-</button>
-            <button onClick={onIncrement}>+</button>
-          </div>
-          <pre>{JSON.stringify(this.props)}</pre>
-        </div>
-        <style>{`
-        img {
-          width: 300px;
-          height: 300px;
-          }
-        h1 {
-          font-family: Arial;
-        }
-        .myDiv {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          height: 100vh;
-        }
-      `}</style>
+        <Enthusiasm {...this.props} />
       </App>
     )
-  }
-
-  getExclamationMarks(numChars) {
-    return Array(numChars + 1).join("!")
   }
 }
 
