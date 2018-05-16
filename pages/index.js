@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {startClock, incrementCount, serverRenderClock} from '../store/store'
 import Examples from '../components/examples'
+import App from '../layout/App'
 
 class Counter extends React.Component {
   static getInitialProps ({ reduxStore, req }) {
@@ -21,7 +22,9 @@ class Counter extends React.Component {
 
   render () {
     return (
-      <Examples />
+      <App>
+        <Examples />
+      </App>      
     )
   }
 }
