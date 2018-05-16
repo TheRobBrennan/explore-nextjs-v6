@@ -49,4 +49,16 @@ describe(`Counter`, () => {
       expect(mockDecrement.mock.calls.length).toBe(1)
     })
   })
+  describe(`and when the reset button is pressed`, () => {
+    let wrapper
+    const mockReset = jest.fn()
+    beforeEach(() => {
+      wrapper = shallow(<Counter reset={mockReset} />)
+      // Click the button
+      wrapper.find('button#reset').simulate('click')
+    })
+    it(`the reset function should be invoked`, () => {
+      expect(mockReset.mock.calls.length).toBe(1)
+    })
+  })
 })
