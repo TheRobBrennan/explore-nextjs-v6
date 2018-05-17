@@ -8,7 +8,7 @@
   },
   "pre-commit": [
     "tslint"
-  ],  
+  ],
   "scripts": {
     "analyze": "./node_modules/.bin/cross-env ANALYZE=true npm run build",
     "test": "./node_modules/.bin/jest --no-cache",
