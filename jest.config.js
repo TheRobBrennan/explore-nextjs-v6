@@ -15,6 +15,7 @@ module.exports = {
     '!next.config.js',
     '**/*.{js,jsx,ts,tsx}',
     '!coverage/**',
-    '!production-server/**'
+    '!production-server/**',
+    '!server/**'
   ]
 }
