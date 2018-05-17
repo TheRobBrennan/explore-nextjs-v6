@@ -1,6 +1,6 @@
-import App from '../layout/App'
-import { dependencies } from '../package.json'
-const { next: nextJSVersion, react: reactVersion } = dependencies
+import App from '../layout/App';
+const config = require('../package.json');
+const { next: nextJSVersion, react: reactVersion } = config.dependencies;
 
 export default () => (
   <App>
@@ -15,4 +15,4 @@ export default () => (
     `}
     </style>
   </App>
-)
+);

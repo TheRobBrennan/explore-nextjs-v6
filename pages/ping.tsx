@@ -1,7 +1,7 @@
-import App from "../layout/App"
+import App from '../layout/App';
 
 export default props => {
-  const mainHeading = props.title || 'PING'
+  const mainHeading = props.title || 'PING';
 
   return (
     <App>
@@ -26,5 +26,5 @@ export default props => {
         }
       `}</style>
     </App>
-  )
-}
+  );
+};
