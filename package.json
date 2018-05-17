@@ -43,8 +43,15 @@
   },
   "homepage": "https://github.com/TheRobBrennan/demo-nextjs-v6#readme",
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.47",
+    "@types/enzyme": "^3.1.10",
+    "@types/jest": "^22.2.3",
+    "@types/next": "^2.4.10",
+    "@types/node": "^10.1.0",
     "@zeit/next-source-maps": "0.0.2",
     "@zeit/next-typescript": "^1.0.0",
+    "babel-jest": "^22.4.3",
+    "babel-loader": "^7.1.4",
     "cross-env": "^5.1.5",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
@@ -57,8 +64,6 @@
     "typescript-babel-jest": "^1.0.5"
   },
   "devDependencies": {
-    "@types/next": "^2.4.10",
-    "@types/node": "^10.1.0",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
     "jest": "^22.4.3"
