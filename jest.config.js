@@ -1,10 +1,5 @@
 module.exports = {
   setupFiles: ['<rootDir>/jest.setup.js'],
-  globals: {
-    'ts-jest': {
-      'useBabelrc': true
-    }
-  },  
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   testRegex: '\\.test\\.(t|j)s(x)',
   transform: {
