@@ -2,10 +2,7 @@
 export default Page => class DefaultPage extends React.Component {
   render () {
     return (
-      <div>
-        {/* IDEA: Consider using styled divs from styled-components */}
         <Page {...this.props} />
-      </div>
     )
   }
 }
