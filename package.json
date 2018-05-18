@@ -22,7 +22,7 @@
     "build": "next build && tsc --project tsconfig.server.json",
     "postbuild": "cp -r static .next/",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production node production-server/server.js -p $PORT",
+    "start": "NODE_ENV=production node .next/production-server/server.js -p $PORT",
     "deploy": "npm run deploy:now",
     "deploy:now": "now --public",
     "docker:up": "docker-compose up -d && docker-compose logs -f",
