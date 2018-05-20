@@ -25,14 +25,26 @@ If you do not have an account with [Auth0](https://auth0.com), please create one
 #### Create a new application
 Generally speaking, there are a handful of steps to follow in order to create a new application for your [Auth0](https://auth0.com) account.
 
-##### Create application
+##### Application settings on Auth0
 When presented with the Create Application screen, you will need to:
 + Give the application a human friendly name (e.g. `DEMO: NextJS v6`)
 + Choose `Single Page Web Applications` as the application type
 + Click `Create`
 + Choose `React` as the technology you are using for the web app
 
-###### Settings
+When you view the settings for your newly created application (referred to as `DEMO: NextJS v6` in this guide), you will want to be sure the following fields are configured as desired:
++ Application Type - `Single Page Application`
++ Allowed Callback URLs (1) - `http://localhost:3000/auth/signed-in`
++ Allowed Web Origins (2) - `http://localhost:3000`
++ Allowed Logout URLs (3) - `http://localhost:3000`
++ Allowed Origins (CORS) (4) - `http://localhost:3000`
+
+(1) - You will need to add additional comma separated URLs once you deploy to other sites (e.g. `https://mysite.com/auth/signed-in`)
+(2) - You will need to add additional comma separated URLs once you deploy to other sites (e.g. `https://mysite.com`)
+(3) - You will need to add additional comma separated URLs once you deploy to other sites (e.g. `https://mysite.com`)
+(4) - You will need to add additional comma separated URLs once you deploy to other sites (e.g. `https://mysite.com`)
+
+##### Application settings for this project
 Once you have created a new application on [Auth0](https://auth0.com), please copy the contents from `config.sample.json` into `config.json`. The demo application will use `config.json` for the appropriate domain and key information provided to you by [Auth0](https://auth0.com).
 
 It should go without saying, but your `config.json` file **SHOULD NOT BE CHECKED INTO SOURCE CONTROL AT ALL**.
