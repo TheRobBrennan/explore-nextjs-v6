@@ -1,5 +1,7 @@
 import Link from "next/link"
 
+import Header from '../components/Header'
+
 export default ({ children }) => {
   return (
     <div>
@@ -12,16 +14,6 @@ export default ({ children }) => {
       */}
 
       {children}
-      <style>{`
-      /* Sample inline styles */
-      a, a:visited, a:active {
-        color: inherit
-      }
-      a:hover {
-        color: #8B008B
-      }
-    `}
-    </style>
     </div>
   )
 }
