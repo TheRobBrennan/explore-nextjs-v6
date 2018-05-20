@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { unsetToken } from '../../utils/auth'
 import { logout } from '../../utils/lock'
 
