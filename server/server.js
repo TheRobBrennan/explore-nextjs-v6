@@ -42,6 +42,11 @@ app.prepare().then(() => {
     return app.render(req, res, "/redux", req.query)
   })
 
+  server.get("/secret", (req, res) => {
+    // SSR for the /secret page in NextJS
+    return app.render(req, res, "/secret", req.query)
+  })
+
   server.get("/test", (_, res) => {
     // Does not use NextJS app at all
     const result = { success: true, message: "Back-end server is online." }
