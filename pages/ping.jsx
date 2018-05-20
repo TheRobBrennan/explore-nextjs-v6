@@ -1,10 +1,11 @@
-import App from "../layout/App"
+import Header from '../components/Header'
 
 export default props => {
   const mainHeading = props.title || 'PING'
 
   return (
-    <App>
+    <div>
+      <Header />
       <div className="content">
         <h1>{mainHeading}</h1>
         <pre>{JSON.stringify(props)}</pre>
@@ -25,6 +26,6 @@ export default props => {
           height: 100vh;
         }
       `}</style>
-    </App>
+    </div>
   )
 }
