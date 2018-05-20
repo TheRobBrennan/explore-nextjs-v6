@@ -1,14 +1,14 @@
-import { mount } from "enzyme"
+import { shallow } from "enzyme"
 import Component from "../pages/ping"
 
 describe("The Ping page", () => {
   it("should render", () => {
-    const wrapper = mount(<Component />)
+    const wrapper = shallow(<Component />)
     expect(wrapper).toBeDefined()
   })
   it("should render with props", () => {
     const props = { mockKey: "mockValue" }
-    const wrapper = mount(<Component {...props} />)
+    const wrapper = shallow(<Component {...props} />)
     expect(wrapper).toBeDefined()
   })
 })
