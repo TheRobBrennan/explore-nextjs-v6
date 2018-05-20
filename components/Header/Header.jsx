@@ -37,13 +37,8 @@ const Header = ({ isAuthenticated, currentUrl }) => {
 }
 
 Header.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  currentUrl: PropTypes.string.isRequired
-}
-
-Header.defaultProps = {
-  isAuthenticated: false,
-  currentUrl: '/'
+  isAuthenticated: PropTypes.bool,
+  currentUrl: PropTypes.string
 }
 
 export default Header
