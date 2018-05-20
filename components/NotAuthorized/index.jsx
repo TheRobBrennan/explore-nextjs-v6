@@ -1,5 +1,2 @@
-export default () => {
-  return (
-    <div>Not authorized</div>
-  )
-}
+import NotAuthorized from './NotAuthorized'
+export default NotAuthorized
