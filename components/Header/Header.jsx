@@ -1,28 +1,35 @@
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 
 import Link from "next/link"
 
 const links = [
-  { href: '/', text: 'Home' },
-  { href: '/ping', text: 'Ping' },
-  { href: '/secret', text: 'Top Secret', authRequired: true },
-  { href: '/auth/sign-in', text: 'Sign In', anonymousOnly: true },
-  { href: '/auth/sign-off', text: 'Sign Off', authRequired: true }
+  { href: "/", text: "Home" },
+  { href: "/ping", text: "Ping" },
+  { href: "/secret", text: "Top Secret", authRequired: true },
+  { href: "/auth/sign-in", text: "Sign In", anonymousOnly: true },
+  { href: "/auth/sign-off", text: "Sign Off", authRequired: true },
 ]
 
-const getAllowedLinks = isAuthenticated => links
-  .filter(l => !l.authRequired || (l.authRequired && isAuthenticated))
-  .filter(l => !isAuthenticated || (isAuthenticated && !l.anonymousOnly))
+const getAllowedLinks = isAuthenticated =>
+  links
+    .filter(l => !l.authRequired || (l.authRequired && isAuthenticated))
+    .filter(l => !isAuthenticated || (isAuthenticated && !l.anonymousOnly))
 
 const Header = ({ isAuthenticated, currentUrl }) => {
   return (
-    <div id='header'>
-      {getAllowedLinks(isAuthenticated).map(l => (
-        <Link prefetch key={l.href} href={l.href}>
-          {l.text}
-        </Link>
-      ))}
-      <style>{`
+    <div id="header">
+      {getAllowedLinks(isAuthenticated).map(l => {
+        return (
+          <span>
+            <Link prefetch key={l.href} href={l.href}>
+              {l.text}
+            </Link>
+            &nbsp;
+          </span>
+        )
+      })}
+      <style>
+        {`
         /* Sample inline styles */
         a, a:visited, a:active {
           color: inherit;
@@ -38,7 +45,7 @@ const Header = ({ isAuthenticated, currentUrl }) => {
 
 Header.propTypes = {
   isAuthenticated: PropTypes.bool,
-  currentUrl: PropTypes.string
+  currentUrl: PropTypes.string,
 }
 
 export default Header
