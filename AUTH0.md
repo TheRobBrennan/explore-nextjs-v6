@@ -1,14 +1,5 @@
-TODO
-+ Update the `Settings` section
-  - Copy the file `config.sample.json` at the root folder, rename it as `config.json` and add your Auth0 keys
-  - Add endpoints to authorize your application
-+ Generate screenshot(s) or capture(s) of demo for AUTH0.md
-+ Deploy feature to Now (perhaps `demo-nextjs-v6-with-auth0`)
-
 # Overview
 This feature was inspired by the [nextjs-auth0 demo](https://github.com/luisrudge/next.js-auth0.git) at [https://github.com/luisrudge/next.js-auth0.git](https://github.com/luisrudge/next.js-auth0.git).
-
-DEMO: You can view a [demo]() of this application [here]().
 
 # Getting started
 ## Setup
