@@ -1,14 +1,14 @@
 import Link from 'next/link'
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import { dependencies } from '../package.json'
 const { next: nextJSVersion, react: reactVersion } = dependencies
 
-import App from '../layout/App'
 import defaultPage from '../hocs/defaultPage'
 
 const Index = ({ isAuthenticated }) => (
-  <App>
+  <div>
     <div className="heading">
       [DEMO] NextJS {nextJSVersion} and React {reactVersion}
     </div>
@@ -25,7 +25,7 @@ const Index = ({ isAuthenticated }) => (
       }
     `}
     </style>
-  </App>
+  </div>
 )
 
 Index.propTypes = {
