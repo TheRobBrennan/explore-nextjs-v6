@@ -29,7 +29,11 @@ const Index = ({ isAuthenticated }) => (
 )
 
 Index.propTypes = {
-  isAuthenticated: PropTypes.bool
+  isAuthenticated: PropTypes.bool.isRequired
+}
+
+Index.defaultProps = {
+  isAuthenticated: false
 }
 
 export default defaultPage(Index)
