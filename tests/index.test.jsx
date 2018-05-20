@@ -1,9 +1,9 @@
-import { mount } from "enzyme"
-import Index from "../pages/index"
+import { shallow } from "enzyme"
+import Component from "../pages/index"
 
 describe("The default page", () => {
   it("should render", () => {
-    const wrapper = mount(<Index />)
+    const wrapper = shallow(<Component />)
     expect(wrapper).toBeDefined()
   })
 })
