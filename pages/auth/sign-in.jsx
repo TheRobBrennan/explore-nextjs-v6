@@ -1,3 +1,5 @@
+import React from 'react'
+
 import defaultPage from '../../hocs/defaultPage'
 import { show } from '../../utils/lock'
 
