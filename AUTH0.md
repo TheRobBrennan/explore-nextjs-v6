@@ -33,6 +33,9 @@ When presented with the Create Application screen, you will need to:
 + Choose `React` as the technology you are using for the web app
 
 ###### Settings
+Once you have created a new application on [Auth0](https://auth0.com), please copy the contents from `config.sample.json` into `config.json`. The demo application will use `config.json` for the appropriate domain and key information provided to you by [Auth0](https://auth0.com).
+
+It should go without saying, but your `config.json` file **SHOULD NOT BE CHECKED INTO SOURCE CONTROL AT ALL**.
 
 ### Local environment
 To get started with this branch, simply clone the project repo and run the development server by running:
