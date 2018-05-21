@@ -5,12 +5,14 @@ import { show } from '../../utils/lock'
 
 const CONTAINER_ID = 'put-lock-here'
 
-class SignIn extends React.Component {
+export class SignIn extends React.Component {
+  /* istanbul ignore next */
   componentDidMount () {
     show(CONTAINER_ID)
   }
 
-  render () {
+  /* istanbul ignore next */
+  render () {    
     return <div id={CONTAINER_ID} />
   }
 }
