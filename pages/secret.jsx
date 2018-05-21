@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import securePage from '../hocs/securePage'
 import NotAuthorized from '../components/NotAuthorized/NotAuthorized'
 
-const Secret = ({ loggedUser }) => {
+export const Secret = ({ loggedUser }) => {
   if (!loggedUser) return <NotAuthorized />
   return (
     <div>
