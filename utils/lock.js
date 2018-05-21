@@ -2,6 +2,7 @@ import { setSecret } from './auth'
 
 import uuid from 'uuid'
 
+/* istanbul ignore next */
 const getLock = (options) => {
   const config = require('../config.json')
   const Auth0Lock = require('auth0-lock').default
@@ -10,6 +11,7 @@ const getLock = (options) => {
 
 const getBaseUrl = () => `${window.location.protocol}//${window.location.host}`
 
+/* istanbul ignore next */
 const getOptions = (container) => {
   const secret = uuid.v4()
   setSecret(secret)
@@ -27,5 +29,5 @@ const getOptions = (container) => {
   }
 }
 
-export const show = (container) => getLock(getOptions(container)).show()
+export const show = /* istanbul ignore next */ (container) => getLock(getOptions(container)).show()
 export const logout = () => getLock().logout({ returnTo: getBaseUrl() })
