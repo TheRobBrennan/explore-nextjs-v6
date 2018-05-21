@@ -12,6 +12,7 @@ module.exports = {
     '!next.config.js',
     '**/*.{js,jsx}',
     '!coverage/**',
-    '!server/**'
+    '!server/**',
+    '!utils/auth.js'
   ]
 }
