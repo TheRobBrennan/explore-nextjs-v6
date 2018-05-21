@@ -7,7 +7,7 @@ const { next: nextJSVersion, react: reactVersion } = dependencies
 
 import defaultPage from '../hocs/defaultPage'
 
-const Index = ({ isAuthenticated }) => (
+export const Index = ({ isAuthenticated }) => (
   <div>
     <div className="heading">
       [DEMO] NextJS {nextJSVersion} and React {reactVersion}

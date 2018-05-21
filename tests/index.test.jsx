@@ -1,9 +1,22 @@
 import { shallow } from "enzyme"
-import Component from "../pages/index"
+import { Index } from "../pages/index"
 
-describe("The default page", () => {
-  it("should render", () => {
-    const wrapper = shallow(<Component />)
-    expect(wrapper).toBeDefined()
+describe("The Index page", () => {
+  describe(`when supplied without props`, () => {
+    it(`should render`, () => {
+      const wrapper = shallow(<Index />)
+      expect(wrapper).toBeDefined()
+    })
+  })
+  describe(`when supplied with a valid`, () => {
+    describe(`isAuthenticated prop`, () => {
+      it("should render", () => {
+        const mockProps = {
+          isAuthenticated: true,
+        }
+        const wrapper = shallow(<Index {...mockProps} />)
+        expect(wrapper).toBeDefined()
+      })
+    })
   })
 })
