@@ -7,6 +7,7 @@ import { getUserFromServerCookie, getUserFromLocalCookie } from '../utils/auth'
 // This higher order component (HoC) simply takes in a Page component and returns the enhanced component
 export default Page =>
   class DefaultPage extends React.Component {
+    /* istanbul ignore next */
     static getInitialProps (ctx) {
       const loggedUser = process.browser ? getUserFromLocalCookie() : getUserFromServerCookie(ctx.req)
       const pageProps = Page.getInitialProps && Page.getInitialProps(ctx)
@@ -18,7 +19,8 @@ export default Page =>
       }
     }
   
-    logout = (eve) => {
+    /* istanbul ignore next */
+    logout = /* istanbul ignore next */(eve) => {
       if (eve.key === 'logout') {
         Router.push(`/?logout=${eve.newValue}`)
       }
@@ -28,6 +30,7 @@ export default Page =>
       window.addEventListener('storage', this.logout, false)
     }
   
+    /* istanbul ignore next */
     componentWillUnmount () {
       window.removeEventListener('storage', this.logout, false)
     }
