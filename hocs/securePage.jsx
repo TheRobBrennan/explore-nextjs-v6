@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 import defaultPage from './defaultPage'
-import NotAuthorized from '../components/NotAuthorized'
+import NotAuthorized from '../components/NotAuthorized/NotAuthorized'
 
 // This higher order component (HoC) simply takes in a Page component and returns the enhanced component or an unauthorized component
 const securePageHoc = Page => class SecurePage extends React.Component {
