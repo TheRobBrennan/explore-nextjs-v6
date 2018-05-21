@@ -1,4 +1,4 @@
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 
 export default props => {
   const mainHeading = props.title || 'PING'

@@ -13,7 +13,7 @@ const links = [
 const getAllowedLinks = isAuthenticated =>
   links
     .filter(l => !l.authRequired || (l.authRequired && isAuthenticated))
-    .filter(l => !isAuthenticated || (isAuthenticated && !l.anonymousOnly))
+    .filter(l => !isAuthenticated || /* istanbul ignore next */(isAuthenticated && !l.anonymousOnly))
 
 const Header = ({ isAuthenticated, currentUrl }) => {
   return (

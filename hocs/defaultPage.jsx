@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Router from 'next/router'
 
-import Header from '../components/Header'
+import Header from '../components/Header/Header'
 import { getUserFromServerCookie, getUserFromLocalCookie } from '../utils/auth'
 
 // This higher order component (HoC) simply takes in a Page component and returns the enhanced component
