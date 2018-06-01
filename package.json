@@ -17,7 +17,7 @@
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "npm test -- --coverage --no-cache",
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
-    "dev": "npm run build && NODE_ENV=development node --inspect server/server.js -p $PORT",
+    "dev": "npm run build && NODE_ENV=development node --inspect .next/production-server/server.js -p $PORT",
     "prebuild": "rm -rf .next/",
     "build": "next build && tsc --project tsconfig.server.json",
     "postbuild": "cp -r static .next/",
