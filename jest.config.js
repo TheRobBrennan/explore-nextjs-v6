@@ -13,6 +13,7 @@ module.exports = {
     '**/*.{js,jsx}',
     '!coverage/**',
     '!server/**',
-    '!utils/auth.js'
+    '!utils/auth.js',
+    '!layout/App.jsx'
   ]
 }
