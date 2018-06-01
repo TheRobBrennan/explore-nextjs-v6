@@ -6,7 +6,10 @@ import uuid from 'uuid'
 const getLock = (options) => {
   const config = require('../config.json')
   const Auth0Lock = require('auth0-lock').default
-  return new Auth0Lock(config.AUTH0_CLIENT_ID, config.AUTH0_CLIENT_DOMAIN, options)
+  const auth0ClientID = process.env.AUTH0_CLIENT_ID || config.AUTH0_CLIENT_ID
+  const auth0ClientDomain = process.env.AUTH0_CLIENT_DOMAIN || config.AUTH0_CLIENT_DOMAIN
+
+  return new Auth0Lock(auth0ClientID, auth0ClientDomain, options)
 }
 
 const getBaseUrl = () => `${window.location.protocol}//${window.location.host}`
