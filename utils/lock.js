@@ -4,7 +4,7 @@ import uuid from 'uuid'
 
 /* istanbul ignore next */
 const getLock = (options) => {
-  const config = require('../config.json')
+  const config = require('../config.json') || require('../config.sample.json')
   const Auth0Lock = require('auth0-lock').default
   const auth0ClientID = process.env.AUTH0_CLIENT_ID || config.AUTH0_CLIENT_ID
   const auth0ClientDomain = process.env.AUTH0_CLIENT_DOMAIN || config.AUTH0_CLIENT_DOMAIN
