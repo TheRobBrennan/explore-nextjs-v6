@@ -16,12 +16,12 @@
     "test:watch": "./node_modules/.bin/jest --watch",
     "test:coverage": "npm test -- --coverage --no-cache",
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
-    "dev": "npm run build && NODE_ENV=development node --inspect=0.0.0.0:9229 server/server.js -p $PORT",
-    "prebuild": "rm -rf .next/",
+    "dev": "npm run build && cross-env NODE_ENV=development node --inspect=0.0.0.0:9229 server/server.js -p $PORT",
+    "prebuild": "rimraf .next/",
     "build": "npx next build",
-    "postbuild": "cp -r static .next/",
+    "postbuild": "cpy static .next/",
     "prestart": "npm run build",
-    "start": "NODE_ENV=production node server/server.js -p $PORT",
+    "start": "cross-env NODE_ENV=production node server/server.js -p $PORT",
     "deploy": "npm run deploy:now",
     "deploy:now": "now --public",
     "docker:up": "docker-compose up -d && docker-compose logs -f",
@@ -52,8 +52,10 @@
     "webpack-bundle-analyzer": "^2.12.0"
   },
   "devDependencies": {
+    "copy-cli": "^1.2.1",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "jest": "^23.1.0"
+    "jest": "^23.1.0",
+    "rimraf": "^2.6.2"
   }
 }
