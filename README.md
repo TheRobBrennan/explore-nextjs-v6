@@ -8,8 +8,7 @@ This is a simple demo to explore NextJS v6 with support for:
             - Firefox
             - Electron
         + Please see [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) for other browsers/environments
-+ [TypeScript](https://www.typescriptlang.org) (2)
-+ [Auth0](https://auth0.com) (3)
++ [Auth0](https://auth0.com) (2)
 + [Webpack](https://webpack.js.org)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/1658e95229e0313ad78c/maintainability)](https://codeclimate.com/github/TheRobBrennan/demo-nextjs-v6/maintainability)
@@ -18,9 +17,7 @@ This is a simple demo to explore NextJS v6 with support for:
 
 (1) - The `master` branch of this project **does not include** Redux. If you would like to explore my Redux demo code, please checkout branch `nextjs-with-redux` instead.
 
-(2) - The `master` branch of this project **does not include** TypeScript. If you would like to explore my TypeScript demo code, please checkout branch `nextjs-with-typescript` instead.
-
-(3) - The `master` branch of this project **does not include** the Auth0 demo. If you would like to explore the Auth0 demo code, please checkout branch `nextjs-with-auth0` instead.
+(2) - The `master` branch of this project **does not include** the Auth0 demo. If you would like to explore the Auth0 demo code, please checkout branch `nextjs-with-auth0` instead.
 
 If you are using [VS Code](https://code.visualstudio.com) as your editor, this project will allow you to debug the front-end NextJS UI, the back-end ExpressJS server, or both while your local server is running:
 ![VS Code: Debug NextJS](static/vscode-debug-nextjs.png)
