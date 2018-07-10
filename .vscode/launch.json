@@ -14,7 +14,7 @@
       "type": "node",
       "request": "attach",
       "name": "NextJS: Express server",
-      // This assumes you have started your server locally
+      // This assumes you have started your server locally and not within a Docker container
       "processId": "${command:PickProcess}"
     },
     {
