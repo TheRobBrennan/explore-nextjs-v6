@@ -9,7 +9,13 @@ COPY package*.json ./
 RUN npm install
 
 # Bundle app
-COPY . .
+COPY README.md ./
+COPY .babelrc ./
+COPY next.config.js ./
+COPY layout/ ./layout/
+COPY pages/ ./pages/
+COPY server/ ./server/
+COPY static/ ./static/
 
 EXPOSE 3000
 CMD ["npm", "run", "dev"]
