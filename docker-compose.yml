@@ -8,6 +8,7 @@ services:
     container_name: 'nextjs-ui'
     ports:
       - "3000:3000"
+      - "9229:9229"
     # If you want local changes to update the Docker container, you can pass through project files like this:
     volumes:
       - ./:/srv/www
