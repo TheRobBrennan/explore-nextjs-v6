@@ -18,7 +18,7 @@
     "test:coverage:view": "npm test -- --coverage --no-cache && open coverage/lcov-report/index.html",
     "dev": "npm run build && NODE_ENV=development node --inspect server/server.js -p $PORT",
     "prebuild": "rm -rf .next/",
-    "build": "next build",
+    "build": "npx next build",
     "postbuild": "cp -r static .next/",
     "prestart": "npm run build",
     "start": "NODE_ENV=production node server/server.js -p $PORT",
@@ -42,6 +42,7 @@
   "homepage": "https://github.com/TheRobBrennan/demo-nextjs-v6#readme",
   "dependencies": {
     "@zeit/next-source-maps": "0.0.2",
+    "babel-core": "^7.0.0-bridge.0",
     "cross-env": "^5.1.5",
     "express": "^4.16.3",
     "morgan": "^1.9.0",
