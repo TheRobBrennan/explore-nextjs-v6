@@ -3,20 +3,7 @@
   // Hover to view descriptions of existing attributes.
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
-  "compounds": [
-    {
-      "name": "[ALL] NextJS",
-      "configurations": ["NextJS: UI", "NextJS: Express server"]
-    }
-  ],  
   "configurations": [
-    {
-      "type": "node",
-      "request": "attach",
-      "name": "NextJS: Express server",
-      // This assumes you have started your server locally
-      "processId": "${command:PickProcess}"
-    },
     {
       "name": "NextJS: UI",
       "type": "chrome",
@@ -27,6 +14,23 @@
       "sourceMapPathOverrides": {
         "webpack:///*": "${webRoot}/*"
       }
-    }
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "[LOCAL] NextJS: Attach to Express server or local NodeJS process",
+      // This assumes you have started your server locally and not within a Docker container
+      "processId": "${command:PickProcess}"
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "[DOCKER] NextJS: Attach to Express server or NodeJS process",
+      "port": 9229,
+      "address": "localhost",
+      "localRoot": "${workspaceRoot}",
+      "remoteRoot": "/srv/www",
+      "protocol": "inspector"
+    },
   ]
 }

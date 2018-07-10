@@ -8,15 +8,26 @@ services:
     container_name: 'nextjs-ui'
     ports:
       - "3000:3000"
+      - "9229:9229"
+    # If you want local changes to update the Docker container, you can pass through project files like this:
     volumes:
       - ./:/srv/www
-    # You can optionally override the command in the Dockerfile by specifying one below
+    # volumes:
+    #   - ./layout:/srv/www/layout
+    #   - ./pages:/srv/www/pages
+    #   - ./server:/srv/www/server
+    #   - ./static:/srv/www/static
+
+    # OPTIONAL: If you want to override the command in the Dockerfile, specify it here
     # command: bash -c "cd /srv/www && npm install && npm run dev"
+
     # env_file:
     #   - ./path/to/.env
+
     # environment:
     #   EXAMPLE_VAR: 'true'
     #   EXAMPLE_VAR2: 'secret'
+
     # depends_on:
     #   - mongodb
     #   - rabbitmq
