@@ -16,6 +16,8 @@ COPY layout/ ./layout/
 COPY pages/ ./pages/
 COPY server/ ./server/
 COPY static/ ./static/
+COPY lib/ ./lib/
+COPY redux/ ./redux/
 
 EXPOSE 3000
 EXPOSE 9229
