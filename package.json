@@ -49,7 +49,7 @@
     "next": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
-    "webpack-bundle-analyzer": "^2.12.0"
+    "webpack-bundle-analyzer": "^3.3.2"
   },
   "devDependencies": {
     "enzyme": "^3.3.0",
